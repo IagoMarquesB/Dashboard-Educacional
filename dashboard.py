@@ -1,16 +1,16 @@
 import streamlit as st
-st.write("Inicializando aplicação...")
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+from datetime import datetime, timedelta
+import hashlib
+
 # Configuração da página
 st.set_page_config(
     page_title="Dashboard Educacional",
     page_icon="📊",
     layout="wide",
 )
-import pandas as pd
-import plotly.express as px
-import plotly.graph_objects as go
-from datetime import datetime, timedelta
-import hashlib
 
 # Importar configurações
 try:
