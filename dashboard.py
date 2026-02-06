@@ -1,4 +1,11 @@
 import streamlit as st
+st.write("Inicializando aplicação...")
+# Configuração da página
+st.set_page_config(
+    page_title="Dashboard Educacional",
+    page_icon="📊",
+    layout="wide",
+)
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
@@ -43,14 +50,6 @@ except ImportError:
         'alerta': '#e74c3c'
     }
 
-# Configuração da página
-st.set_page_config(
-    page_title="Dashboard Educacional",
-    page_icon="📊",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
-
 # Sistema de autenticação
 def check_password():
     """Retorna True se o usuário inseriu a senha correta."""
@@ -87,6 +86,7 @@ def check_password():
         return True
 
 if not check_password():
+    st.warning("Aguardando autenticação…")
     st.stop()
 
 # Carregar dados
